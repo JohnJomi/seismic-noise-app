@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Seismic Noise Removal</title>
+  <title>Seismic Noise Removal - Tutorial</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tutorial-style.css">
 </head>
 <body>
 
@@ -16,6 +17,148 @@
       </ul>
     </nav>
 
-      <script src="script.js"></script>
+    <div class="tutorial-container">
+      <center>
+        <h1>Seismic Noise Removal Tutorial</h1>
+        <h2>Learn how to effectively use our seismic data filtering tool</h2>
+      </center>
+      
+      <center>
+        <div class="step-card">
+          <div class="step-header">
+            <center>
+              <span class="step-number">1</span>
+              <h3 class="step-title">Access the Filter Tool</h3>
+            </center>
+          </div>
+          <div class="step-content">
+            <center>
+              <p>Navigate to the "Filter" page using the navigation menu. This will load our Streamlit application in an embedded frame.</p>
+              <div class="code-block">
+                <span class="code-comment">// Click on the "Filter" link in the navigation bar</span>
+              </div>
+            </center>
+          </div>
+        </div>
+      </center>
+      
+      <center>
+        <div class="step-card">
+          <div class="step-header">
+            <center>
+              <span class="step-number">2</span>
+              <h3 class="step-title">Input Seismic Data Parameters</h3>
+            </center>
+          </div>
+          <div class="step-content">
+            <center>
+              <p>Enter the details of the seismic data you want to process:</p>
+              <ul style="display: inline-block; text-align: left;">
+                <li><strong>Network Code</strong> - The seismic network identifier (e.g., XB)</li>
+                <li><strong>Station Code</strong> - The specific station code (e.g., ELYSE)</li>
+                <li><strong>Location Code</strong> - Location identifier (e.g., 02)</li>
+                <li><strong>Channel</strong> - Component channels (use ? as wildcard, e.g., BH?)</li>
+                <li><strong>Start Time</strong> - UTC start time of the data window</li>
+                <li><strong>End Time</strong> - UTC end time of the data window</li>
+              </ul>
+            </center>
+          </div>
+        </div>
+      </center>
+      
+      <center>
+        <div class="step-card warning">
+          <div class="step-header">
+            <center>
+              <span class="step-number">!</span>
+              <h3 class="step-title">Important: Three-Component Data Requirement</h3>
+            </center>
+          </div>
+          <div class="step-content">
+            <center>
+              <p>For the polarization filter to work correctly, you must select data that includes <strong>all three components</strong> (typically Z, N, E or 1, 2, 3).</p>
+              <p class="highlight">The application expects exactly 3 traces. If you don't select data with 3 components, the filtering process will fail.</p>
+              <p>Make sure your channel selection includes all three components. Using a wildcard (like "BH?") often helps retrieve all available components.</p>
+            </center>
+          </div>
+        </div>
+      </center>
+      
+      <center>
+        <div class="step-card">
+          <div class="step-header">
+            <center>
+              <span class="step-number">3</span>
+              <h3 class="step-title">Fetch and Process Data</h3>
+            </center>
+          </div>
+          <div class="step-content">
+            <center>
+              <p>Click the "Fetch & Process Data" button to:</p>
+              <ol style="display: inline-block; text-align: left;">
+                <li>Retrieve data from the IRIS database</li>
+                <li>Preprocess the waveforms (remove offsets, drifts, and taper edges)</li>
+                <li>Apply band-pass filters to keep useful frequencies</li>
+                <li>Use polarization to suppress random noise</li>
+                <li>Visualize the difference between raw and cleaned signals</li>
+              </ol>
+            </center>
+          </div>
+        </div>
+      </center>
+      
+      <center>
+        <div class="step-card">
+          <div class="step-header">
+            <center>
+              <span class="step-number">4</span>
+              <h3 class="step-title">Interpret Results</h3>
+            </center>
+          </div>
+          <div class="step-content">
+            <center>
+              <p>After processing, you'll see:</p>
+              <ul style="display: inline-block; text-align: left;">
+                <li>A comparison plot showing raw data (top) and cleaned data (bottom)</li>
+                <li>The ability to download the cleaned data as a CSV file</li>
+              </ul>
+              <p>Examine the cleaned signal for seismic events that were previously obscured by noise.</p>
+            </center>
+          </div>
+        </div>
+      </center>
+      
+      <center>
+        <div class="step-card">
+          <div class="step-header">
+            <center>
+              <span class="step-number">5</span>
+              <h3 class="step-title">Troubleshooting</h3>
+            </center>
+          </div>
+          <div class="step-content">
+            <center>
+              <p>If you encounter errors:</p>
+              <ul style="display: inline-block; text-align: left;">
+                <li>Verify your network, station, and channel codes</li>
+                <li>Ensure you've selected a time range with available data</li>
+                <li>Confirm that your selection includes exactly three components</li>
+                <li>Check your internet connection (data is fetched from IRIS)</li>
+              </ul>
+            </center>
+          </div>
+        </div>
+      </center>
+      
+      <center>
+        <div class="ready-section">
+          <h2>Ready to try it out?</h2>
+          <p>Now that you understand how to use the seismic noise removal tool, navigate to the Filter page to begin processing your data.</p>
+          <a href="HTML main.html" class="cta-button">Go to Filter Tool</a>
+        </div>
+      </center>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
