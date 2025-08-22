@@ -1,0 +1,11 @@
+[browser]
+gatherUsageStats = false
+
+[server]
+enableCORS = true
+enableXsrfProtection = false
+enableWebsocketCompression = false
+enableStaticServing = true
+headers = [
+  "Access-Control-Allow-Origin = https://yourwebsite.com"
+]
