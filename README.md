@@ -50,7 +50,7 @@ A web-based application for accessing, processing, and filtering seismic data fr
 ### 3. Processing & Export
 - Preview filtered waveforms in real-time
 - Validate data quality metrics
-- Download results as CSV files
+- Download results as CSV files 
 - Access processing metadata and station information
 
 ## Project Structure
