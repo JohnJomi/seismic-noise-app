@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from obspy.clients.fdsn import Client
 from obspy import UTCDateTime, Trace, Stream
 
-st.title("🌍 Seismic Noise Removal App (ObsPy + Streamlit)")
+st.title("Seismic Noise Removal App (ObsPy + Streamlit)")
 
 # User inputs
 network = st.text_input("Network Code", "XB")
@@ -24,7 +24,7 @@ if st.button("Fetch & Process Data"):
         st_raw = client.get_waveforms(network, station, location, channel, start, end)
         st_raw.merge(method=1, fill_value="interpolate")
         st_raw.sort()
-        st.write("✅ Data fetched:", st_raw)
+        st.write("Data fetched:", st_raw)
 
         assert len(st_raw) == 3, f"Expected 3 traces, got {len(st_raw)}"
 
@@ -65,4 +65,4 @@ if st.button("Fetch & Process Data"):
         st.download_button("Download Cleaned CSV", csv_data, "seismic_data_final.csv")
 
     except Exception as e:
-        st.error(f"❌ Error: {e}")
+        st.error(f" Error: {e}")
